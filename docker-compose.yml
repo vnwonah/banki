@@ -1,0 +1,12 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  banki-api:
+    image: banki-api
+    build:
+      context: .
+      dockerfile: Banki.API/Dockerfile
+    ports:
+      - 5087:5087
