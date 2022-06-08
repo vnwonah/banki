@@ -1,4 +1,4 @@
-FROM  mcr.microsoft.com/dotnet/nightly/aspnet:7.0 AS base
+FROM  mcr.microsoft.com/dotnet/nightly/aspnet:7.0.0-preview.5 AS base
 WORKDIR /app
 EXPOSE 5087
 
@@ -9,7 +9,7 @@ ENV ASPNETCORE_URLS=http://+:5087
 RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
 USER appuser
 
-FROM mcr.microsoft.com/dotnet/nightly/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/nightly/sdk:7.0.100-preview.5 AS build
 WORKDIR /src
 COPY ["Banki.API/Banki.API.csproj", "Banki.API/"]
 RUN dotnet restore "Banki.API/Banki.API.csproj"
