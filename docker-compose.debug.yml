@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: Banki.API/Dockerfile
     ports:
-      - 5087:5087
+      - 5087:80
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     volumes:

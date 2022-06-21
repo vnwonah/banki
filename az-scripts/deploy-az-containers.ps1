@@ -25,7 +25,7 @@ az containerapp env create `
     --resource-group $RESOURCE_GROUP `
     --location $LOCATION
 
-docker tag bankiapi $REGISTRY_NAME'/banki/api'
+docker tag banki-api $REGISTRY_NAME'/banki/api'
 
 docker push $REGISTRY_NAME'/banki/api'
 
